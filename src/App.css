@@ -1,38 +1,48 @@
-.App {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.card-form{
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+  width: 400px;
+  border-radius: 10px;
+  margin: 1cm auto;
+  padding: 30px;
+}
+
+.card-form .header{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-form label{
+  display: block;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-form .form-group{
+  margin-top: 20px;
+}
+.card-form input{
+  width: 100% !important;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card-form .submit-btn{
+  margin-top: 30px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.users > div {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+  padding: 30px;
 }
+
+

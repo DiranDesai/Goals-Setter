@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import { useContext, useEffect, useState } from 'react';
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom"
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Home from './pages/Home';
+import { globalContext } from './context/GlobalState';
 import './App.css';
+import Goal from './pages/Goal';
+
 
 function App() {
+  let {authData: {token}} = useContext(globalContext);
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <Routes>
+          <Route index element={token ? <Home /> : <Navigate to="/login" />} />
+          <Route path='/login' element={token ? <Navigate to="/" /> : <Login />}/> 
+          <Route path='/signup' element={token ? <Navigate to="/" /> : <Signup />}/>
+          <Route path='/goal/:id' element={<Goal />} /> 
+        </Routes>
+      </Router>
   );
 }
 
